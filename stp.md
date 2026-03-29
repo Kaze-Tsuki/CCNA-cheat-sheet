@@ -26,7 +26,7 @@ switch(config-if)\# spanning-tree bpduguard enable
 
 ## Root Guard
 
-Avoid end device add an switch that has better superior BPDU, on recieve enter **root inconsistent state**
+Avoid end device add an switch that has better superior BPDU, on recieve enter **root inconsistent state**.
 
 ```bash
 switch(config)\# int [interface]

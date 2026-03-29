@@ -17,7 +17,7 @@ Setup interfaces mode to vlans, trunk for multiple, access for one
 
 ```bash
 switch(config)\# int [int-type] [int-num]
-switch(config-if)\# switchport trunk vlan [some vlans]
+switch(config-if)\# switchport trunk allowed vlan [some vlans]
 switch(config-if)\# switchport access vlan [vlan-id]
 switch(config-if)\# switchport mode [trunk/access]
 ```
@@ -50,7 +50,14 @@ For trunk interfaces need encapsulation
 L3switch(config)\# int [int-type] [int-num]
 # setup encapsulation
 L3switch(config-if)\# switchport trunk encap dot1q
-L3switch(config-if)\# switchport trunk vlan [some vlans]
+L3switch(config-if)\# switchport trunk allowed vlan [some vlans]
 L3switch(config-if)\# switchport access vlan [vlan-id]
 L3switch(config-if)\# switchport mode [trunk/access]
+```
+
+## Disable Vlan(switchport)
+
+```bash
+switch(config-if)\# no switchport
+switch(config-if)\# ip addr [ip] [netmask]
 ```
