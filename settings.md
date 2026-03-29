@@ -73,3 +73,15 @@ switch\# show spanning-tree vlan [vlan-id]
 ```bash
 switch\# show spanning-tree inconsistentports
 ```
+
+### Route Check
+
+- Route: show ip/LAN it can reach
+```bash
+switch\# show ip route
+```
+
+- ARP: show all MAC and ip in same VLAN
+```bash
+switch\# show arp
+```
