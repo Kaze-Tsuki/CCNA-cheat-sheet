@@ -13,3 +13,11 @@ ip route [address] [netmask] [exit-int]
 # config
 ip route [address] [netmask] [exit-addr]
 ```
+
+
+## Default Route
+
+```bash
+# config
+ip route 0.0.0.0 0.0.0.0 { ip-addr | exit-int }
+```
