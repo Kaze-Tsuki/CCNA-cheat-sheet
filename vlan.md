@@ -16,10 +16,11 @@ switch(config-vlan)\# name [name] # optional
 Setup interfaces mode to vlans, trunk for multiple, access for one
 
 ```bash
-switch(config)\# int [int-type] [int-num]
-switch(config-if)\# switchport trunk allowed vlan [some vlans]
-switch(config-if)\# switchport access vlan [vlan-id]
-switch(config-if)\# switchport mode [trunk/access]
+# config
+int [int-type] [int-num]
+switchport trunk allowed vlan [somevlans]
+switchport access vlan [vlan-id]
+switchport mode [trunk/access]
 ```
 
 ## L3 Switch
@@ -28,36 +29,41 @@ switch(config-if)\# switchport mode [trunk/access]
 
 Create a vlan
 ```bash
-L3switch(config)\# vlan [number]
-L3switch(config-vlan)\# name [name] # optional
+# config
+vlan [number]
+name [name] # optional
 ```
 
 Set Vlan Interface (SVI) and gateway ip
 ```bash
-L3switch(config)\# int vlan [vlan-id]
-L3switch(config-vlan)\# ip address [ip] [netmask]
+# config
+int vlan [vlan-id]
+ip address [ip] [netmask]
 ```
 
 After all, enable routing
 ```bash
-L3switch(config)\# ip routing
+# config
+ip routing
 ```
 
 ### Interface
 
 For trunk interfaces need encapsulation
 ```bash
-L3switch(config)\# int [int-type] [int-num]
+# config
+int [int-type] [int-num]
 # setup encapsulation
-L3switch(config-if)\# switchport trunk encap dot1q
-L3switch(config-if)\# switchport trunk allowed vlan [some vlans]
-L3switch(config-if)\# switchport access vlan [vlan-id]
-L3switch(config-if)\# switchport mode [trunk/access]
+switchport trunk encap dot1q
+switchport trunk allowed vlan [somevlans]
+switchport access vlan [vlan-id]
+switchport mode [trunk/access]
 ```
 
 ## Disable Vlan(switchport)
 
 ```bash
-switch(config-if)\# no switchport
-switch(config-if)\# ip addr [ip] [netmask]
+# config-if
+no switchport
+ip addr [ip] [netmask]
 ```

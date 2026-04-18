@@ -17,3 +17,9 @@ Setup vlan on L3 switch and switch.
 Setup spanning tree protocol to avoid broadcast storm.
 
 [spanning tree](./stp.md)
+
+## Routing Policy
+
+Set routing policies using static, rip and ospf with some additional settings.
+
+[route](./route/index.md)

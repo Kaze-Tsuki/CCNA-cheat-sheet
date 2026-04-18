@@ -1,9 +1,14 @@
 # Settings
 
+## Help
+
+To see the options of the command, use `?`
+
 ## Save
 
 ```bash
-switch\# copy running-config startup-config
+# enable
+copy running-config startup-config
 ```
 
 ## Log Config
@@ -12,28 +17,32 @@ switch\# copy running-config startup-config
 
 - SSH and RSA key
 ```bash
-switch\# show ip ssh
-switch\# show crypto key mypubkey rsa
+# enable
+show ip ssh
+show crypto key mypubkey rsa
 ```
 
 ### Running Config
 Overview
 
 ```bash
-switch\# show running-config
+# enable
+show running-config
 ```
 
 ## Interfaces
 
 - All: list interfaces state
 ```bash
-switch\# show interfaces [status/trunk]
+# enable
+show interfaces [status/trunk]
 ```
 
 - Specify Interface: show detail settings of the interface
 ```bash
-switch\# show interfaces [int-type] [member/module/name] switchport
-switch\# show interfaces fa 0/1 switchport
+# enable
+show interfaces [int-type] [member/module/name] switchport
+show interfaces fa 0/1 switchport
 ```
 
 ### Vlan
@@ -42,46 +51,74 @@ Check ports and vlan mapping
 
 - All
 ```bash
-switch\# show vlan
-switch\# show vlan brief
+# enable
+show vlan
+show vlan brief
 ```
 
 - Specify Vlan
 ```bash
-switch\# show vlan id [vlan-id]
+# enable
+show vlan id [vlan-id]
 ```
 
 ### Spanning Tree
 
 - All
 ```bash
-switch\# show spanning-tree
-switch\# show spanning-tree summary detail
+# enable
+show spanning-tree
+show spanning-tree summary detail
 ```
 
 - Specify Interface
 ```bash
-switch\# show spanning-tree int [interface] detail
+# enable
+show spanning-tree int [interface] detail
 ```
 
 - Specify Vlan
 ```bash
-switch\# show spanning-tree vlan [vlan-id]
+# enable
+show spanning-tree vlan [vlan-id]
 ```
 
 - Inconsistent Port
 ```bash
-switch\# show spanning-tree inconsistentports
+# enable
+show spanning-tree inconsistentports
 ```
 
 ### Route Check
 
 - Route: show ip/LAN it can reach
 ```bash
-switch\# show ip route
+# enable
+show ip route
 ```
 
 - ARP: show all MAC and ip in same VLAN
 ```bash
-switch\# show arp
+# enable
+show arp
+```
+
+## Check MAC Address
+
+- Device
+```bash
+ipconfig /all
+```
+
+- Switch
+```bash
+# enable
+show mac-address-table # neighbor
+show int [interface] # interface mac
+```
+
+- Router
+```bash
+# enable
+show arp
 ```
