@@ -96,3 +96,72 @@ default-informmation originate
 ## Passive Interface
 
 [See RIP Setting](./rip.md#passive-interface)
+
+## Virtual Link
+
+Situation:  
+Backbone <-- ABR1 --> Area 10 <-- ABR2 --> Area 20
+
+On ABR1
+```bash
+# config
+router ospf [process-id]
+area 10 virtual-link [ABR2-id]
+```
+On ABR2
+```bash
+# config
+router ospf [process-id]
+area 10 virtual-link [ABR1-id]
+```
+
+## Stub Area Types
+
+|Area|External Routes (Type 4/5)|Inter-Area Routes (Type 3)|Default Route (Type 3)|
+|-|-|-|-|
+|Normal Area|Yes|Yes|Yes|
+|Stub Area|No|Yes|Yes|
+|Totally Stub Area|No|No|Yes|
+|NSSA|Yes (as type 7)|Yes|No|
+|Totally NSSA|Yes(as type 7)|No|Yes|
+
+### Stub Area
+
+No external, remain same if single area.
+
+```bash
+#config
+router ospf [pid]
+area [area-id] stub
+```
+
+### Totally Stub
+**Only on ABR**
+
+No external and summary type 3 as a default route.
+
+```bash
+#config
+router ospf [pid]
+area [area-id] stub no-summary
+```
+
+### Not-So-Stub
+
+Allow redistributing external AS.
+
+```bash
+#config
+router ospf [pid]
+area [area-id] nssa
+```
+
+### Totally NSSA
+
+Change type 3 LSA to 1 default route.
+
+```bash
+#config
+router ospf [pid]
+area [area-id] nssa no-summary
+```
