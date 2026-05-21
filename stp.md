@@ -1,5 +1,12 @@
 # Spanning Tree Protocol
 
+## Mode
+
+```bash
+# config
+spanning-tree mode [mode]
+```
+
 ## Portfast
 
 Bypass listening and learning state
