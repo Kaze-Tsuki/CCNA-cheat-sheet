@@ -53,6 +53,14 @@ router-id [ip]
         ip ospf [process-id] area [area-id]
     ```
 
+## Redistribution
+
+Redistribute rip to ospf
+```bash
+router ospf [process-id]
+redistribute rip metric [cost] metric-type 1 subnets
+```
+
 ## DR Election
 
 1. priority (bigger)

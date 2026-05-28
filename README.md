@@ -23,3 +23,15 @@ Setup spanning tree protocol to avoid broadcast storm.
 Set routing policies using static, rip and ospf with some additional settings.
 
 [route](./route/index.md)
+
+## AAA / ACL
+
+Set AAA & ACL for router and switch
+
+[aaa](./aaa.md)
+
+## FHRP
+
+Set up redundency for network
+
+[fhrp](./fhrp.md)
